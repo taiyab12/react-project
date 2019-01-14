@@ -1,0 +1,10 @@
+body {
+  background-image: url("https://www.gettyimages.in/landing/assets/static_content/home/info-tabs3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
