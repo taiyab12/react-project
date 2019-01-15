@@ -1,0 +1,33 @@
+body{
+    background-image: url("https://www.gettyimages.in/landing/assets/static_content/home/info-tabs3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+.homebrand{
+    margin-top: 2.2em;
+    padding-left: 6.267em;
+    font-size: .625em;
+}
+.btnloginhome{
+    font-size: .625em;
+    margin-left: 1.9em;
+    margin-top: 2em;
+    border-radius: 2em;
+    padding-right: 1.1em;
+    padding-left: 1.6em;
+}
+.btnregisterhome{
+    font-size: .625em;
+    margin-left: .5em;
+    margin-top: 2em;
+    border-radius: 2em;
+    padding-right: .5em;
+    padding-left: 1.3em;
+}
+.corouselstyle{
+    margin-top:17%;
+}
+.icon-background1{
+    color: teal;
+}
