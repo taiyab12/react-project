@@ -1,0 +1,41 @@
+.loginCard{
+    width: 15.4rem;
+    margin-top: 7%;
+}
+.loginwel{
+    font-size: 1.25em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: .35em;
+}
+.loginForm{
+    padding-left: 2.1em;
+    padding-right: 1.9em;
+    font-size: .65em;
+}
+.form-control{
+    height: calc(1.45rem + 4px);
+    margin-bottom: .7em;
+}
+.form-group{
+    margin-bottom: 0;
+}
+.btnlogin{
+    margin-top: .8em;
+    font-size: 1.1em;
+    padding-left: 7.5em;
+    padding-right: 7.5em;
+    border-radius: 2em;
+}
+#forgetpass{
+    font-size: .865em;
+    text-align: center;
+    margin-top: 2.95em;
+    margin-bottom: 3em;
+}
+#logincopy{
+    font-size: .6em;
+    text-align: center;
+    margin-top: 2.4em;
+    margin-left: 2.2em;
+}

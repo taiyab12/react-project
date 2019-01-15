@@ -25,9 +25,10 @@ export function login( credentials ) {
         }
     })
     .then( response => {
-        if( response.data.authToken ) {
+        // {console.log(response.data)})
+        if( response.data.login ) {
             localStorage.setItem( 'email', response.data.email );
-            localStorage.setItem( 'authToken', response.data.authToken );
+            // localStorage.setItem( 'authToken', response.['User-Token']);
             isLoggedIn = true;
             return response.data;
         } else {
