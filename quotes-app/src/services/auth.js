@@ -25,23 +25,25 @@ export function login( credentials ) {
         }
     })
     .then( response => {
-        console.log('response is ',response.data['User-Token'])
-            // let data = response.data
+        if (response.data['User-Token']){
+        // console.log('response is ',response.data['User-Token'])
             localStorage.setItem( 'token',response.data['User-Token']);
-            localStorage.setItem('login', login)
+            localStorage.setItem('login', login);
             isLoggedIn = true;
-    })
-    .catch(err=>{
-        console.log(err)
+            alert('Welcome , you are login...')
+            return response.data;
+        } else {
+            throw new Error( 'Credentials incorrect' );
+        }
     })
 }
 
 export function logout() {
-    localStorage.removeItem( 'email' );
-    localStorage.removeItem( 'authToken' );
+    localStorage.removeItem( 'token' );
+    localStorage.removeItem( 'login' );
     isLoggedIn = false;
 }
 
 export function getAuthToken() {
-    return localStorage.getItem( 'authToken' );
+    return localStorage.getItem( 'token' );
 }
