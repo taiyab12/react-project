@@ -20,7 +20,7 @@ class Login extends Component {
     login = ( event ) => {
         event.preventDefault();
         login( this.state )
-            .then( data => this.props.history.push( '/' ) )
+            .then( data => this.props.history.push( '/search' ) )
             .catch( error => alert( 'Invalid credentials' ) );
     }
 

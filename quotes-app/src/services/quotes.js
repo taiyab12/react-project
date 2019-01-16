@@ -20,6 +20,15 @@ export function getQuotes() {
         .then( response => response.data )
  };
  
+ export function getSearchQuotes(query) {
+    return axios.get( `quotelistUrl?type=tag&filter=${query}`, {'headers':{ 'Authorization':Apitoken}} )
+        .then( response => response.data )
+ };
 
 
+//  https://favqs.com/api/quotes/?filter=funny&type=tag&page=10
 
+//  export function getSearchMoviesList(query){
+//     return axios.get( `${searchMovieUrl}?${apiKey}&query=${query}&page=1`, getAxiosAuthenticatedEnpointOptions() )
+//         .then( response => response.data )
+// }

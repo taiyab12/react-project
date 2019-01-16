@@ -36,9 +36,54 @@ function getQuotesThunk() {
 }
 
 
+
+function getSearchQuotes(query ) {
+    return {
+        type: Constants.FETCH_SEARCH_QUOTES,
+        payload:{
+            query:query
+        }
+    }
+}
+
+function getSearchQuotesSuccess( searchquotes ) {
+    return {
+        type: Constants.FETCH_SEARCH_QUOTES_SUCCESS,
+        payload: {
+            searchquotes: searchquotes
+        }
+    }
+}
+
+function getSearchQuotesFailure( error ) {
+    return {
+        type: Constants.FETCH_SEARCH_QUOTES_FAILURE,
+        payload: {
+            error: error
+        }
+    };
+}
+
+function getSearchQuotesThunk(query) {
+    return function( dispatch ) {
+        dispatch( getSearchQuotes(query) );
+
+        QuotesService.getSearchQuotes(query)
+            .then( searchquotes => dispatch( getSearchQuotesSuccess( searchquotes ) ) )
+            .catch( error => dispatch( getSearchQuotesFailure( error ) ) );
+    }
+}
+
+
 export {
     getQuotes,
     getQuotesSuccess,
     getQuotesFailure,
-    getQuotesThunk
+    getQuotesThunk,
+
+    getSearchQuotes,
+    getSearchQuotesSuccess,
+    getSearchQuotesFailure,
+    getSearchQuotesThunk
+
 };

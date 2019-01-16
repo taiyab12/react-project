@@ -1,0 +1,48 @@
+.searchbrand{
+    margin-top: .8em;
+    padding-left: 6.267em;
+    font-size: .625em;
+}
+.searchsearch{
+    font-size: .55em;
+    margin-top: 1.5em;
+    /* border-radius: 2em; */
+    padding-right: 1.1em;
+    padding-left: .93em;
+}
+.searchprofile{
+    font-size: .55em;
+    padding-left: 2em;
+}
+.searchlogout{
+    font-size: .55em;
+    border: 0;
+    background: 0;
+    padding-left: 2.8em;
+}
+.searchForm{
+    display: -webkit-inline-box;
+    font-size: 1.55em;
+    margin-top: .85em;
+    margin-left: 2.7em;
+}
+searchfafa{
+    font-size: 1rem;
+}
+.searchFormText{
+    font-size: 1.2em;
+    margin-top: .2em;
+    /* border: 0; */
+    background: 0;
+    margin-left: 0.35em;
+    margin-right: em;
+    margin-right: .3em;
+    padding-left: 0;
+    padding-right: 0;
+    width: 11em;
+}
+.searchbtn{
+    font-size: .75em;
+    border-radius: 2em;
+    padding-top: 0em;
+}

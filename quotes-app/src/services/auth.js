@@ -47,3 +47,7 @@ export function logout() {
 export function getAuthToken() {
     return localStorage.getItem( 'token' );
 }
+
+export function getLoginUser() {
+    return localStorage.getItem( 'token' );
+}
