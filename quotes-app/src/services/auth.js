@@ -25,15 +25,14 @@ export function login( credentials ) {
         }
     })
     .then( response => {
-        // {console.log(response.data)})
-        if( response.data.login ) {
-            localStorage.setItem( 'email', response.data.email );
-            // localStorage.setItem( 'authToken', response.['User-Token']);
+        console.log('response is ',response.data['User-Token'])
+            // let data = response.data
+            localStorage.setItem( 'token',response.data['User-Token']);
+            localStorage.setItem('login', login)
             isLoggedIn = true;
-            return response.data;
-        } else {
-            return new Error( 'Credentials incorrect' );
-        }
+    })
+    .catch(err=>{
+        console.log(err)
     })
 }
 
