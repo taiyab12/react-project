@@ -20,6 +20,11 @@ class SearchQuotes extends Component {
         this.queryInputRef = React.createRef();
     }
 
+    logout = () => {
+        logout();
+        this.props.history.push( '/' );
+    }
+
     Search = ( event ) => {
         event.preventDefault();
 
@@ -27,15 +32,9 @@ class SearchQuotes extends Component {
 
     updateSearchText = () => {
         this.setState({
-            query: this.queryInputRef.current.value
+            query: this.queryInputRef.current.value        // sir when i am try to searh and typing
         });
     }
-
-    logout = () => {
-        logout();
-        this.props.history.push( '/' );
-    }
-
     render() {
         console.log( 'this.props = ', this.props );
         let el;
@@ -69,7 +68,6 @@ class SearchQuotes extends Component {
                     </div>
                 );
         }
-
         return <div className="">
 
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -90,29 +88,25 @@ class SearchQuotes extends Component {
                     </li>
                     </ul>
                 </div>
-            </nav>
-            
+            </nav> 
+           
             <div className="row no-gutters offset-md-4 ">
-                
-                {/* <div className="col-md-5"> */}
-                    <form className="searchForm" onSubmit={this.Search}>
-                        <p className="searchfafa"><i class="fa fa-search" aria-hidden="true"></i></p>
-                        <div className="form-group ">
-                            <input type="text" className="form-control searchFormText "id="search" name="search" placeholder={'Search  for Quotes..'} ref={this.searchInputRef} onChange={this.updateSearchText} />
-                        </div>
-                        <div className="form-group">
-                            <button className="searchbtn">Search</button>
-                        </div>
-                    </form>
-                {/* </div> */}
-
+                <form className="searchForm" onSubmit={this.Search}>
+                    <p className="searchfafa"><i class="fa fa-search" aria-hidden="true"></i></p>
+                    <div className="form-group ">
+                        <input type="text" className="form-control searchFormText "id="search" name="search"
+                            placeholder={'Search  for Quotes..'} ref={this.searchInputRef} onChange={this.updateSearchText} />
+                    </div>
+                    <div className="form-group">
+                        <button className="searchbtn">Search</button>
+                    </div>
+                </form>
             </div>
-
             {el}
         </div>
     }
     componentDidMount() {
-        this.props.dispatch( getSearchQuotesThunk() );
+        this.props.dispatch( getSearchQuotesThunk(this.state) );
     }
 }
 
