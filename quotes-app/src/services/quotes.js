@@ -21,7 +21,7 @@ export function getQuotes() {
  };
  
  export function getSearchQuotes(query) {
-    return axios.get( `quotelistUrl?type=tag&filter=${query}`, {'headers':{ 'Authorization':Apitoken}} )
+    return axios.get( `${quotelistUrl}?type=tag&filter=${query}&page=5`, {'headers':{ 'Authorization':Apitoken}} )
         .then( response => response.data )
  };
 

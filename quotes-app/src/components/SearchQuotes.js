@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { isLoggedIn, logout } from '../services/auth';
 
-import { FETCH_QUOTES,  FETCH_QUOTES_SUCCESS , FETCH_QUOTES_FAILURE } from '../actions/constants';
+import { FETCH_SEARCH_QUOTES,  FETCH_SEARCH_QUOTES_SUCCESS , FETCH_SEARCH_QUOTES_FAILURE } from '../actions/constants';
 import { getSearchQuotesThunk } from '../actions/creators';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
@@ -29,32 +29,40 @@ class SearchQuotes extends Component {
         event.preventDefault();
 
     }
-
-    updateSearchText = () => {
+    // this.updateSearchText=this.updateSearchText.bind();
+    updateSearchText = (event) => {
+        event.preventDefault();
         this.setState({
-            query: this.queryInputRef.current.value        // sir when i am try to searh and typing
+            query: this.queryInputRef.current.value    
         });
     }
     render() {
-        console.log( 'this.props = ', this.props );
+        console.log( 'this.props insude SearchQuotes = ', this.props );
         let el;
 
-        switch( this.props.quoteList.isLoading ) {
-            case FETCH_QUOTES:
+        switch( this.props.searchQuotes.isLoading ) {
+            case FETCH_SEARCH_QUOTES:
                 el = (
                     <div className="alert alert-default">
                         SearchQuotes are being loaded...
                     </div>
                 );
                 break;
-            case  FETCH_QUOTES_SUCCESS :
+            case  FETCH_SEARCH_QUOTES_SUCCESS :
                 el = (
                     <div>
-                        
+                        {this.props.searchQuotes.searchquotes.quotes.slice(1,10).map((quote,index)=>{
+                                return(
+                                    <div>
+                                    {quote.body}
+                                   </div>  
+                                )
+                                })
+                            }
                     </div>
                 );
                 break;
-            case FETCH_QUOTES_FAILURE:
+            case FETCH_SEARCH_QUOTES_FAILURE:
                 el = (
                     <div className="alert alert-danger">
                         Something went wrong. Quotes could not be fetched.
@@ -95,7 +103,7 @@ class SearchQuotes extends Component {
                     <p className="searchfafa"><i class="fa fa-search" aria-hidden="true"></i></p>
                     <div className="form-group ">
                         <input type="text" className="form-control searchFormText "id="search" name="search"
-                            placeholder={'Search  for Quotes..'} ref={this.searchInputRef} onChange={this.updateSearchText} />
+                            placeholder={'Search  for Quotes..'} ref={this.queryInputRef} onChange={this.updateSearchText} />
                     </div>
                     <div className="form-group">
                         <button className="searchbtn">Search</button>
@@ -106,7 +114,7 @@ class SearchQuotes extends Component {
         </div>
     }
     componentDidMount() {
-        this.props.dispatch( getSearchQuotesThunk(this.state) );
+        this.props.dispatch( getSearchQuotesThunk('funny') );
     }
 }
 

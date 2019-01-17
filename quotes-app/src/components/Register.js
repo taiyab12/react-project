@@ -59,14 +59,14 @@ class Register extends Component {
                     </div>
                 </nav>
                 <div className="row no-gutters">
-                    <div className="registercontent offset-3 col-md-6" >
+                    <div className=" registercontent offset-3 col-md-4" >
                         <div className="row no-gutters">
-                            <div className="col-md-1 col-sm-1 ">
+                            <div className="col-md-2 col-sm-2">
                                 <p className="fafaumbrella"><i class="fa fa-umbrella" aria-hidden="true"></i></p>
                                 <p className="fafamap"><i class="fa fa-map-signs"></i></p>
                                 <p className="fafauser"><i class="fa fa-user-secret"></i></p>
                             </div>
-                            <div className="col-md-5 registertext col-sm-5">
+                            <div className="col-md-8 registertext col-sm-8">
                                 <p id ="reghead1">George Carlin</p>
                                 <p id="reg">Let a smile be your umbrella, and you'll end up with a face full of rain.</p>
                                 <p>Bob Marley</p>

@@ -14,7 +14,7 @@ import '../css/homecss.css';
 
 class QuotesList extends Component {
     render() {
-        console.log( 'this.props = ', this.props );
+        console.log( 'this.props inside quoteslist component = ', this.props );
         let el;
 
         switch( this.props.quoteList.isLoading ) {
