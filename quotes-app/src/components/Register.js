@@ -59,14 +59,24 @@ class Register extends Component {
                     </div>
                 </nav>
                 <div className="row no-gutters">
-                    <div className=" registercontent offset-3 col-md-4" >
+                    <div className=" registercontent offset-3 col-md-3" >
                         <div className="row no-gutters">
-                            <div className="col-md-2 col-sm-2">
-                                <p className="fafaumbrella"><i class="fa fa-umbrella" aria-hidden="true"></i></p>
-                                <p className="fafamap"><i class="fa fa-map-signs"></i></p>
-                                <p className="fafauser"><i class="fa fa-user-secret"></i></p>
+                            <div className="col-md-12 col-sm-12 regcontent1">
+                                <p className="fafaumbrella"><i class="fa fa-umbrella" aria-hidden="true"></i>
+                                <span id="reghead1">George Carlin</span></p>
+                                <p id="regpara1">Let a smile be your umbrella, and you'll end up with a face full of rain.</p>
+                                <p className="fafamap"><i class="fa fa-map-signs"></i>
+                                <span id="reghead2">Bob Marley</span></p>
+                                <p id="regpara2">Life is one big road with lots of sign, So when you riding through the ruts, 
+                                    Don't you complicate your mind Flee from hate, mischief jealousy Don't bury 
+                                    your thoughts; put your vision to reality.
+                                </p>
+                                
+                                <p className="fafauser"><i class="fa fa-user-secret"></i>
+                                <span id="reghead3">Sherlock Holmes</span></p>
+                                <p id="regpara3">Education never ends, Watson. It is a series of lessions with the greatest for last</p>
                             </div>
-                            <div className="col-md-8 registertext col-sm-8">
+                            {/* <div className="col-md-8 registertext col-sm-8">
                                 <p id ="reghead1">George Carlin</p>
                                 <p id="reg">Let a smile be your umbrella, and you'll end up with a face full of rain.</p>
                                 <p>Bob Marley</p>
@@ -76,7 +86,7 @@ class Register extends Component {
                                 </p>
                                 <p>Sherlock Holmes</p>
                                 <p>Education never ends, Watson. It is a series of lessions with the greatest for last</p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="card registerCard " >
