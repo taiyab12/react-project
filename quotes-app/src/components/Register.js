@@ -90,24 +90,27 @@ class Register extends Component {
                         </div>
                     </div>
                     <div className="card registerCard " >
-                        <p className="loginwel">Welcome</p>
+                        <p className="regregister">Register</p>
                         <form className="loginForm" onSubmit={this.login}>
-                            <div className="form-group">
-                                <label htmlFor="email" className="control-label" >Email</label>
-                                <input type="email" className="form-control" id="email" name="email" ref={this.emailInputRef} onChange={this.updateCredentials} />
+                             <div className="form-group">
+                                <input type="text" className="form-control" id="username" name="username" placeholder={'Username'} ref={this.emailInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="password" className="control-label"style={{marginBottom:'.45em'}}>Password</label>
-                                <input type="password" className="form-control" id="password" name="password" ref={this.passwordInputRef} onChange={this.updateCredentials} />
+                                <input type="email" className="form-control" id="email" name="email"placeholder={'Email'} ref={this.emailInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <button className="btn btnlogin btn-primary">Login</button>
+                                <input type="password" className="form-control" id="password" name="password"placeholder={'Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
                             </div>
-                            <p id="forgetpass">FORGET PASSWORD?</p>
+                            <div className="form-group">
+                                <input type="password" className="form-control" id="confirmpassword" name="confirmpassword"placeholder={'Confirm Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
+                            </div>
+                            <div className="form-group">
+                                <button className="btn btnlogin btn-primary">REGISTER</button>
+                            </div>
+                            <p id="forgetpass">Already have an account? Login</p>
                         </form>
                     </div>
                 </div>
-                <p id="logincopy"><i class="fa fa-copyright"></i>2018</p>
             </div>
         );
     }
