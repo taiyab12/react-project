@@ -56,11 +56,11 @@ class SearchQuotes extends Component {
                         {this.props.searchQuotes.searchquotes.quotes.map((quote,index)=>{
                                 return(
                                     
-                                    <div className="card col-md-4" style={{display:'inline-block'}}>
-                                    <p className="text-center"><img className="col-md-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ul0RASuMwyt8ALqYw3TcPU5QlurGljQtrWYRKO18pa6ZYbvN"></img></p>
-                                    <p style={{fontSize:'.85em'}}>{quote.body}</p>
-                                    <p style={{fontSize:'.65em'}}>{quote.author}</p>
-                                   <p className="text-center"> <img className="rounded-circle col-md-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStU4IBbTg641epSxf2q0A7z6MEWIRlDiEo1djzpp_iZ37EHoh3"/></p>  
+                                    <div className="card col-md-4 " style={{display:'inline-block'}}>
+                                    <p className="text-center"><img className="col-md-2 searchapstrop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ul0RASuMwyt8ALqYw3TcPU5QlurGljQtrWYRKO18pa6ZYbvN"></img></p>
+                                    <p className="searchquotebody">{quote.body}</p>
+                                    <p className="searchquoteauthor">{quote.author}</p>
+                                   <p className="text-center"> <img className="rounded-circle col-md-4  searchimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStU4IBbTg641epSxf2q0A7z6MEWIRlDiEo1djzpp_iZ37EHoh3"/></p>  
                                    </div>
                                 
                                 )

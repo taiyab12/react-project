@@ -35,7 +35,6 @@ searchfafa{
     /* border: 0; */
     background: 0;
     margin-left: 0.35em;
-    margin-right: em;
     margin-right: .3em;
     padding-left: 0;
     padding-right: 0;
@@ -46,3 +45,35 @@ searchfafa{
     border-radius: 2em;
     padding-top: 0em;
 }
+.searchapstrop{
+    width: 3em;
+}
+.searchimage{
+    width: 10em;
+}
+
+.searchquotebody{
+    text-align: center;
+    font-size: .85em;
+}
+.searchquoteauthor{
+    text-align: center;
+    font-size: .65em;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .searchForm{
+        margin-left: 1em;
+    }
+    .searchFormText{
+        width: 6em;
+        /* font-size:em; */
+    }
+    .searchapstrop{
+        width: 3em;  
+    }
+    .searchimage{
+        width: 5em;
+    }
+    } 
