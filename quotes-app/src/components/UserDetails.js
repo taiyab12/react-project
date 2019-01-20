@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { isLoggedIn, logout } from '../services/auth';
+import { logout } from '../services/auth';
 
-import { FETCH_SEARCH_QUOTES,  FETCH_SEARCH_QUOTES_SUCCESS , FETCH_SEARCH_QUOTES_FAILURE } from '../actions/constants';
-import { getSearchQuotesThunk } from '../actions/creators';
+import { FETCH_USER_DETAILS,  FETCH_USER_DETAILS_SUCCESS , FETCH_USER_DETAILS_FAILURE } from '../actions/constants';
+import { getUserDetailsThunk } from '../actions/creators';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/font-awesome/css/font-awesome.min.css';
 import '../css/searchcss.css';
 
 
-class SearchQuotes extends Component {
+class UserDetails extends Component {
     constructor( props ) {
         super( props );
-
-        this.state = {
-            query : ''
-        };
-
-        this.queryInputRef = React.createRef();
     }
 
     logout = () => {
@@ -25,35 +19,30 @@ class SearchQuotes extends Component {
         this.props.history.push( '/' );
     }
 
-    Search = ( event ) => {
-        event.preventDefault();
-        console.log('this is query',this.state)
-        this.props.dispatch( getSearchQuotesThunk( this.state.query ) );
 
-    }
     // this.updateSearchText=this.updateSearchText.bind();
-    updateSearchText = (event) => {
-        event.preventDefault();
-        this.setState({
-            query: this.queryInputRef.current.value    
-        });
-    }
+    // updateSearchText = (event) => {
+    //     event.preventDefault();
+    //     this.setState({
+    //         query: this.queryInputRef.current.value    
+    //     });
+    // }
     render() {
-        console.log( 'this.props insude SearchQuotes = ', this.props );
+        console.log( 'this.props inside UserDetails = ', this.props );
         let el;
 
-        switch( this.props.searchQuotes.isLoading ) {
-            case FETCH_SEARCH_QUOTES:
+        switch( this.props.userDetails.isLoading ) {
+            case FETCH_USER_DETAILS:
                 el = (
                     <div className="alert alert-default">
-                        SearchQuotes are being loaded...
+                        userdetails are being loaded...
                     </div>
                 );
                 break;
-            case  FETCH_SEARCH_QUOTES_SUCCESS :
+            case  FETCH_USER_DETAILS_SUCCESS :
                 el = (
                     <div className="offset-md-1 offset-sm-1 container row">
-                        {this.props.searchQuotes.searchquotes.quotes.map((quote,index)=>{
+                        {/* {this.props.searchQuotes.searchquotes.quotes.slice(1,10).map((quote,index)=>{
                                 return(
                                     
                                     <div className="card col-md-4" style={{display:'inline-block'}}>
@@ -62,17 +51,16 @@ class SearchQuotes extends Component {
                                     <p style={{fontSize:'.65em'}}>{quote.author}</p>
                                    <p className="text-center"> <img className="rounded-circle col-md-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStU4IBbTg641epSxf2q0A7z6MEWIRlDiEo1djzpp_iZ37EHoh3"/></p>  
                                    </div>
-                                
                                 )
                                 })
-                            }
+                            } */}
                     </div>
                 );
                 break;
-            case FETCH_SEARCH_QUOTES_FAILURE:
+            case FETCH_USER_DETAILS_FAILURE:
                 el = (
                     <div className="alert alert-danger">
-                        Something went wrong. Quotes could not be fetched.
+                        Something went wrong. User Details could not be fetched.
                     </div>
                 );
                 break;
@@ -96,7 +84,7 @@ class SearchQuotes extends Component {
                         <Link className=" searchsearch " to="/search">SEARCH</Link>
                     </li>
                     <li className="nav-item"> 
-                        <Link className="searchprofile" to="/profile">PROFILE</Link>
+                            <Link className="searchprofile" to="/login">PROFILE</Link>
                     </li>
                     <li className="nav-item">
                         <button onClick={this.logout} className="searchlogout">Logout</button>
@@ -105,24 +93,12 @@ class SearchQuotes extends Component {
                 </div>
             </nav> 
            
-            <div className="row no-gutters offset-md-4 ">
-                <form className="searchForm" onSubmit={this.Search}>
-                    <p className="searchfafa"><i class="fa fa-search" aria-hidden="true"></i></p>
-                    <div className="form-group ">
-                        <input type="text" className="form-control searchFormText "id="search" name="search"
-                            placeholder={'Search  for Quotes..'} ref={this.queryInputRef} onChange={this.updateSearchText} />
-                    </div>
-                    <div className="form-group">
-                        <button className="searchbtn">Search</button>
-                    </div>
-                </form>
-            </div>
             {el}
         </div>
     }
     componentDidMount() {
-        this.props.dispatch( getSearchQuotesThunk('funny') );
+        this.props.dispatch( getUserDetailsThunk( ) );
     }
 }
 
-export default SearchQuotes;
+export default UserDetails;

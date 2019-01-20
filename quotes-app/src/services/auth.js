@@ -10,6 +10,7 @@ const axiosOptions = {
 };
 
 export let isLoggedIn = localStorage.getItem( 'authToken' );
+export let token = localStorage.getItem( 'token' );
 
 export function login( credentials ) {
     return axios.post( loginUrl, { 
@@ -45,9 +46,5 @@ export function logout() {
 }
 
 export function getAuthToken() {
-    return localStorage.getItem( 'token' );
-}
-
-export function getLoginUser() {
     return localStorage.getItem( 'token' );
 }

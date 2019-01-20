@@ -74,6 +74,42 @@ function getSearchQuotesThunk(query) {
     }
 }
 
+function getUserDetails( ) {
+    return {
+        type: Constants.FETCH_USER_DETAILS
+    }
+}
+
+function getUserDetailsSuccess( user ) {
+    return {
+        type: Constants.FETCH_USER_DETAILS_SUCCESS,
+        payload: {
+            user: user
+        }
+    }
+}
+
+function getUserDetailsFailure( error ) {
+    return {
+        type: Constants.FETCH_USER_DETAILS_FAILURE,
+        payload: {
+            error: error
+        }
+    };
+}
+
+function getUserDetailsThunk() {
+    return function( dispatch ) {
+        dispatch( getUserDetails() );
+
+        QuotesService.getUserDetails()
+            .then( user => dispatch( getQuotesSuccess( user ) ) )
+            .catch( error => dispatch( getQuotesFailure( error ) ) );
+    }
+}
+
+
+
 
 export {
     getQuotes,
@@ -84,6 +120,9 @@ export {
     getSearchQuotes,
     getSearchQuotesSuccess,
     getSearchQuotesFailure,
-    getSearchQuotesThunk
-
+    getSearchQuotesThunk,
+    getUserDetails,
+    getUserDetailsSuccess,
+    getUserDetailsFailure,
+    getUserDetailsThunk
 };

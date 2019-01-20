@@ -40,7 +40,7 @@ class Register extends Component {
         return (
             <div className=" ">
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <Link className=" offset-md-2 offset-sm-2 homebrand" to="/" >FAVQS</Link>
+                    <Link className=" offset-md-2 registerbrand" to="/" >FAVQS</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -59,7 +59,7 @@ class Register extends Component {
                     </div>
                 </nav>
                 <div className="row no-gutters">
-                    <div className=" registercontent offset-3 col-md-3" >
+                    <div className=" registercontent offset-md-3 col-md-3 col-sm-3" >
                         <div className="row no-gutters">
                             <div className="col-md-12 col-sm-12 regcontent1">
                                 <p className="fafaumbrella"><i class="fa fa-umbrella" aria-hidden="true"></i>
@@ -91,26 +91,52 @@ class Register extends Component {
                     </div>
                     <div className="card registerCard " >
                         <p className="regregister">Register</p>
-                        <form className="loginForm" onSubmit={this.login}>
+                        <div className="text-center regwith">
+                            <span class="fa-stack fa-sm" style={{width:'1.75em'}}>
+                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i class="fa fa-facebook fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-sm "style={{width:'1.75em'}}>
+                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i class="fa fa-google fa-stack-1x"></i>
+                            </span>
+                            <span class="fa-stack fa-sm"style={{width:'1.75em'}}>
+                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i class="fa fa-twitter fa-stack-1x"></i>
+                            </span>
+                        </div>
+                        <div className="row no-gutters regline">
+                            <div className="col-md-5">
+                            <hr/>
+                            </div>
+                            <div className="col-md-2 text-center">
+                            <p id="orreg">or</p>
+                            </div>
+                            <div className="col-md-5">
+                            <hr/>
+                            </div>
+                        </div>
+                        <form className="registerForm" onSubmit={this.login}>
                              <div className="form-group">
-                                <input type="text" className="form-control" id="username" name="username" placeholder={'Username'} ref={this.emailInputRef} onChange={this.updateCredentials} />
+                                <input type="text" className="form-control regformcontrol" id="username" name="username" placeholder={'Username'} ref={this.emailInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <input type="email" className="form-control" id="email" name="email"placeholder={'Email'} ref={this.emailInputRef} onChange={this.updateCredentials} />
+                                <input type="email" className="form-control regformcontrol" id="email" name="email"placeholder={'Email'} ref={this.emailInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <input type="password" className="form-control" id="password" name="password"placeholder={'Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
+                                <input type="password" className="form-control regformcontrol" id="password" name="password"placeholder={'Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <input type="password" className="form-control" id="confirmpassword" name="confirmpassword"placeholder={'Confirm Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
+                                <input type="password" className="form-control regformcontrol" id="confirmpassword" name="confirmpassword"placeholder={'Confirm Password'} ref={this.passwordInputRef} onChange={this.updateCredentials} />
                             </div>
                             <div className="form-group">
-                                <button className="btn btnlogin btn-primary">REGISTER</button>
+                                <button className="btn btnregister btn-primary">REGISTER</button>
                             </div>
-                            <p id="forgetpass">Already have an account? Login</p>
+                            <p id="forgetpassreg">Already have an account? Login</p>
                         </form>
                     </div>
                 </div>
+                <p id="regcopy"><i class="fa fa-copyright"></i>2018</p>
             </div>
         );
     }
