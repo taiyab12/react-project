@@ -103,8 +103,12 @@ function getUserDetailsThunk() {
         dispatch( getUserDetails() );
 
         QuotesService.getUserDetails()
-            .then( user => dispatch( getQuotesSuccess( user ) ) )
-            .catch( error => dispatch( getQuotesFailure( error ) ) );
+            .then( user => dispatch( getUserDetailsSuccess( user ) ) )
+            .catch( error =>{
+                console.log('=====')
+                console.log(error)
+                dispatch( getUserDetailsFailure( error ) ) ;
+            } )
     }
 }
 

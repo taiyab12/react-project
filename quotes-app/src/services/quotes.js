@@ -5,6 +5,7 @@ const Apitoken='Token token="a3973df032794d545d20ad335e4cf07f"';
 const quotelistUrl = `${baseUrl}/quotes`;
 const userDetailsUrl = `${baseUrl}/users/:login`;
 
+
 const axiosOptions = {
     timeout: 10000
 };
@@ -27,14 +28,22 @@ export function getQuotes() {
  };
 
  export function getUserDetails() {
+     console.log('this is inside get user detail function:',getAuthToken())
     return axios.get( userDetailsUrl, 
         {'headers': {
         'Authorization': Apitoken,
-        'User-Token': getAuthToken()
+        'User-Token': `"${getAuthToken()}"`,
+        'Content-Type': 'application/json'
+        // 'User-Token': `${getAuthToken()}`
          }
         })
-        .then( response => response.data )
+        .then( response => 
+            // {console.log('response inside get',response.data)})
+            response.data )
 }
+
+
+
 //  https://favqs.com/api/quotes/?filter=funny&type=tag&page=10
 
 //  export function getUserDetails(){

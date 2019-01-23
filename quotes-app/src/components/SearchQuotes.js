@@ -52,17 +52,15 @@ class SearchQuotes extends Component {
                 break;
             case  FETCH_SEARCH_QUOTES_SUCCESS :
                 el = (
-                    <div className="offset-md-1 offset-sm-1 container row">
+                    <div className="searchQuotesData container row">
                         {this.props.searchQuotes.searchquotes.quotes.map((quote,index)=>{
                                 return(
-                                    
-                                    <div className="card col-md-4 " style={{display:'inline-block'}}>
+                                    <div className="card col-md-3 searchCards " style={{display:'inline-block'}}>
                                     <p className="text-center"><img className="col-md-2 searchapstrop" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ul0RASuMwyt8ALqYw3TcPU5QlurGljQtrWYRKO18pa6ZYbvN"></img></p>
                                     <p className="searchquotebody">{quote.body}</p>
                                     <p className="searchquoteauthor">{quote.author}</p>
                                    <p className="text-center"> <img className="rounded-circle col-md-4  searchimage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStU4IBbTg641epSxf2q0A7z6MEWIRlDiEo1djzpp_iZ37EHoh3"/></p>  
                                    </div>
-                                
                                 )
                                 })
                             }
@@ -117,6 +115,11 @@ class SearchQuotes extends Component {
                     </div>
                 </form>
             </div>
+            <div className="searchSaying">
+            <p className="mx-auto text-center col-md-3">Often times i'm confronted with a quote that i don't remember saying.
+                 So on one hand it's very flattering, it is just so surreal.</p>
+            </div>
+            
             {el}
         </div>
     }

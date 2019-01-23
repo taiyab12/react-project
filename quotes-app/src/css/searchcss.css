@@ -45,6 +45,10 @@ searchfafa{
     border-radius: 2em;
     padding-top: 0em;
 }
+.searchSaying{
+    margin-top: -1em;
+    font-size: .75em;
+}
 .searchapstrop{
     width: 3em;
 }
@@ -60,7 +64,15 @@ searchfafa{
     text-align: center;
     font-size: .65em;
 }
-
+.searchQuotesData{
+    margin-left: 17em;
+    margin-top: 3em;
+    width: 64em;
+}
+.searchCards{
+    margin-right: 1.1em;
+    margin-bottom: 2.5em;
+}
 
 @media only screen and (max-width: 768px) {
     .searchForm{
