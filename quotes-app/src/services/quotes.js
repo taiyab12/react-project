@@ -30,7 +30,7 @@ export function getQuotes() {
  export function getUserDetails() {
      console.log('this is inside get user detail function:',getAuthToken())
     return axios.get( userDetailsUrl, 
-        {'headers': {
+        {...axiosOptions,headers: {
         'Authorization': Apitoken,
         'User-Token': `"${getAuthToken()}"`,
         'Content-Type': 'application/json'

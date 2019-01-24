@@ -41,19 +41,8 @@ class UserDetails extends Component {
                 break;
             case  FETCH_USER_DETAILS_SUCCESS :
                 el = (
-                    <div className="offset-md-1 offset-sm-1 container row">
-                        {/* {this.props.searchQuotes.searchquotes.quotes.slice(1,10).map((quote,index)=>{
-                                return(
-                                    
-                                    <div className="card col-md-4" style={{display:'inline-block'}}>
-                                    <p className="text-center"><img className="col-md-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ul0RASuMwyt8ALqYw3TcPU5QlurGljQtrWYRKO18pa6ZYbvN"></img></p>
-                                    <p style={{fontSize:'.85em'}}>{quote.body}</p>
-                                    <p style={{fontSize:'.65em'}}>{quote.author}</p>
-                                   <p className="text-center"> <img className="rounded-circle col-md-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStU4IBbTg641epSxf2q0A7z6MEWIRlDiEo1djzpp_iZ37EHoh3"/></p>  
-                                   </div>
-                                )
-                                })
-                            } */}
+                    <div className="">
+                       hello this is in user details success
                     </div>
                 );
                 break;
@@ -84,7 +73,7 @@ class UserDetails extends Component {
                         <Link className=" searchsearch " to="/search">SEARCH</Link>
                     </li>
                     <li className="nav-item"> 
-                            <Link className="searchprofile" to="/login">PROFILE</Link>
+                            <Link className="searchprofile" to="/profile">PROFILE</Link>
                     </li>
                     <li className="nav-item">
                         <button onClick={this.logout} className="searchlogout">Logout</button>

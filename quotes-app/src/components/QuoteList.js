@@ -92,7 +92,7 @@ class QuotesList extends Component {
                     <li className="nav-item">
                         {
                             isLoggedIn ? <button onClick={this.logout} className="btn btn-primary">LOGOUT</button> : 
-                            <Link className=" btnloginhome btn btn-primary" to="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN</Link>
+                            <Link className=" btnloginhome btn btn-primary" to="/login"><i className="fa fa-sign-in" aria-hidden="true"></i> LOGIN</Link>
                         }
                     </li>
                     <li className="nav-item">

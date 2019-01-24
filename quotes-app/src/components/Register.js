@@ -49,11 +49,11 @@ class Register extends Component {
                         <li className="nav-item">
                             {
                                 isLoggedIn ? <button onClick={this.logout} className="btn btn-primary" to="/">LOGOUT</button> : 
-                                <Link className=" btnloginhome btn btn-primary" to="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> LOGIN</Link>
+                                <Link className=" btnloginhome btn btn-primary" to="/login"><i className="fa fa-sign-in" aria-hidden="true"></i> LOGIN</Link>
                             }
                         </li>
                         <li className="nav-item">
-                            <Link className=" btnregisterhome btn btn-primary" to="/register"><i class="fa fa-users" aria-hidden="true"></i> REGISTER</Link>
+                            <Link className=" btnregisterhome btn btn-primary" to="/register"><i className="fa fa-users" aria-hidden="true"></i> REGISTER</Link>
                         </li>
                         </ul>
                     </div>
@@ -62,17 +62,17 @@ class Register extends Component {
                     <div className=" registercontent offset-md-3 col-md-3 col-sm-3" >
                         <div className="row no-gutters">
                             <div className="col-md-12 col-sm-12 regcontent1">
-                                <p className="fafaumbrella"><i class="fa fa-umbrella" aria-hidden="true"></i>
+                                <p className="fafaumbrella"><i className="fa fa-umbrella" aria-hidden="true"></i>
                                 <span id="reghead1">George Carlin</span></p>
                                 <p id="regpara1">Let a smile be your umbrella, and you'll end up with a face full of rain.</p>
-                                <p className="fafamap"><i class="fa fa-map-signs"></i>
+                                <p className="fafamap"><i className="fa fa-map-signs"></i>
                                 <span id="reghead2">Bob Marley</span></p>
                                 <p id="regpara2">Life is one big road with lots of sign, So when you riding through the ruts, 
                                     Don't you complicate your mind Flee from hate, mischief jealousy Don't bury 
                                     your thoughts; put your vision to reality.
                                 </p>
                                 
-                                <p className="fafauser"><i class="fa fa-user-secret"></i>
+                                <p className="fafauser"><i className="fa fa-user-secret"></i>
                                 <span id="reghead3">Sherlock Holmes</span></p>
                                 <p id="regpara3">Education never ends, Watson. It is a series of lessions with the greatest for last</p>
                             </div>
@@ -92,17 +92,17 @@ class Register extends Component {
                     <div className="card registerCard " >
                         <p className="regregister">Register</p>
                         <div className="text-center regwith">
-                            <span class="fa-stack fa-sm" style={{width:'1.75em'}}>
-                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
-                                <i class="fa fa-facebook fa-stack-1x"></i>
+                            <span className="fa-stack fa-sm" style={{width:'1.75em'}}>
+                                <i className="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i className="fa fa-facebook fa-stack-1x"></i>
                             </span>
-                            <span class="fa-stack fa-sm "style={{width:'1.75em'}}>
-                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
-                                <i class="fa fa-google fa-stack-1x"></i>
+                            <span className="fa-stack fa-sm "style={{width:'1.75em'}}>
+                                <i className="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i className="fa fa-google fa-stack-1x"></i>
                             </span>
-                            <span class="fa-stack fa-sm"style={{width:'1.75em'}}>
-                                <i class="fa fa-circle fa-stack-2x icon-background1"></i>
-                                <i class="fa fa-twitter fa-stack-1x"></i>
+                            <span className="fa-stack fa-sm"style={{width:'1.75em'}}>
+                                <i className="fa fa-circle fa-stack-2x icon-background1"></i>
+                                <i className="fa fa-twitter fa-stack-1x"></i>
                             </span>
                         </div>
                         <div className="row no-gutters regline">
@@ -136,7 +136,7 @@ class Register extends Component {
                         </form>
                     </div>
                 </div>
-                <p id="regcopy"><i class="fa fa-copyright"></i>2018</p>
+                <p id="regcopy"><i className="fa fa-copyright"></i>2018</p>
             </div>
         );
     }
